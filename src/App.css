@@ -1,38 +1,167 @@
-.App {
+.root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  padding: 20px;
+  background-color: cornflowerblue;
+  cursor: pointer;
+}
+
+.red-button {
+  padding: 10px;
+  background-color: red;
+  cursor: pointer;
+}
+
+.blue-button {
+  padding: 10px;
+  background-color: cornflowerblue;
+  cursor: pointer;
+}
+
+.add-btn {
+  padding: 10px;
+  background-color: cornflowerblue;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.x-button {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.tip-percent {
+  margin-left: 5px;
+}
+
+.ok-btn {
+  padding: 10px;
+  background-color: cornflowerblue;
+  cursor: pointer;
+}
+
+.dice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.roll-btn {
+  margin-left: 15px;
+  padding: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.blue-rect {
+  height: 400px;
+  width: 500px;
+  background-color: khaki;
+}
+
+.header-root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-container {
+  margin-right: 25px;
+}
+
+.cat-logo {
+  height: 100px;
+  padding: 20px 50px;
+  cursor: pointer;
+}
+
+.pages {
+  padding: 10px 30px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.cat-root {
+  display: flex;
+
+}
+
+.cat-name {
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.cat-descrip {
+  font-size: 20px;
+  padding: 20px;
+}
+
+.toys-root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.toys-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.toy-img {
+  width: 400px;
+  object-fit: cover;
+}
+
+.toy {
+  width: 400px;
+}
+
+.drawer {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background-color: lightgrey;
+  transition: ease-out 1s;
+}
+
+.dropdown {
+  background-color: lightgrey;
+  width: 150px;
+  position: absolute;
+}
+
+.extra:hover {
+  color: blue;
+}
+
+.tabs-holder {
+  width: 200px;
+  height: 100%;
+  background-color: lightpink;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tabs {
+  padding: 20px;
+  border: 1px solid black;
+  border-top: none;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.stack-number {
+  border: 1px solid black;
+  padding: 5px;
 }

@@ -1,0 +1,40 @@
+.queue-root {
+    display: flex;
+}
+
+.half-screen {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-panel {
+    padding: 20px;
+    border: 1px solid cornflowerblue;
+    width: 300px;
+    background-color: cornflowerblue;
+    font-size: 25px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.queue-input {
+    margin-right: 10px;
+}
+
+.queue-contain {
+    border: 1px solid black;
+    display: flex;
+    width: 200px;
+    background-color: cornflowerblue;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.queue-inner {
+    width: 50%;
+    text-align: center;
+}

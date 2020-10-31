@@ -1,0 +1,14 @@
+.outer {
+    display: flex;
+}
+
+.square {
+    width: 40px;
+    height: 40px;
+    /* background-color: cornflowerblue; */
+    border: 1px solid cornflowerblue;
+}
+
+.btn {
+    font-size: 20px;
+}

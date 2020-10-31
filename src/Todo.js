@@ -9,7 +9,7 @@ class Todo extends Component {
 
   componentDidMount(){
     let x = localStorage.getItem('list');
-    let y = JSON.parse(x);
+    let y = JSON.parse(x) || [];
     this.setState({list: y});
   }
 

@@ -165,3 +165,14 @@
   border: 1px solid black;
   padding: 5px;
 }
+
+.snack {
+  position: sticky;
+  left: 10px;
+  bottom: 10px;
+  width: 50px;
+  background-color: green;
+  text-align: center;
+  padding: 10px;
+  display: none;
+}

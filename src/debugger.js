@@ -10,7 +10,113 @@ class Debugger extends Component {
   }
 
   componentDidMount() {
-    this.rushHour('14:20');
+    this.boring(['r', 'd', 'r'], [2, 10, 4]);
+    // 12 7 5 2 3
+  }
+
+  boring = (arr1, arr2) => {
+    let dict = {
+      '0,-1': true,
+      '0,-2': true,
+      '0,-3': true,
+      '1,-3': true,
+      '2,-3': true,
+      '3,-3': true,
+      '3,-4': true,
+      '3,-5': true,
+      '4,-5': true,
+      '5,-5': true,
+      '5,-4': true,
+      '5,-3': true,
+      '6,-3': true,
+      '7,-3': true,
+      '7,-4': true,
+      '7,-5': true,
+      '7,-6': true,
+      '7,-7': true,
+      '6,-7': true,
+      '5,-7': true,
+      '4,-7': true,
+      '3,-7': true,
+      '2,-7': true,
+      '1,-7': true,
+      '0,-7': true,
+      '-1,-7': true,
+      '-1,-6': true,
+      '-1,-5': true,
+    };
+
+    let x = -1;
+    let y = -5;
+
+    for(let i=0; i<arr1.length; i++){
+      let status = 'safe';
+      const command = arr1[i];
+      const steps = arr2[i];
+      if(command === 'q'){
+        return;
+      } else if (command === 'r'){
+        for(let j=0; j<steps; j++){
+          x += 1;
+          const key = x + ',' + y;
+          // console.log(key);
+          if(dict[key] == true){
+            status = 'DANGER';
+          } else {
+            dict[key] = true;
+          }
+        }
+      } else if (command === 'u'){
+        for(let j=0; j<steps; j++){
+          y += 1;
+          const key = x + ',' + y;
+          // console.log(key);
+          if(dict[key] == true){
+            status = 'DANGER';
+          } else {
+            dict[key] = true;
+          }
+        }
+      } else if (command === 'l'){
+        for(let j=0; j<steps; j++){
+          x -= 1;
+          const key = x + ',' + y;
+          // console.log(key);
+          if(dict[key] == true){
+            status = 'DANGER';
+          } else {
+            dict[key] = true;
+          }
+        }
+      } else if (command === 'd'){
+        for(let j=0; j<steps; j++){
+          y -= 1;
+          const key = x + ',' + y;
+          // console.log(key);
+          if(dict[key] == true){
+            status = 'DANGER';
+          } else {
+            dict[key] = true;
+          }
+        }
+      }
+      console.log(x + ' ' + y + ' ' + status);
+      if(status === 'DANGER'){
+        return;
+      }
+    }
+  }
+
+  // 120 71 49 22 27
+  sumac = (first, second) => {
+    let count = 2;
+    while(first >= second){
+      const diff = first - second;
+      first = second;
+      second = diff;
+      count++;
+    }
+    console.log(count)
   }
 
   // rush 7 - 10

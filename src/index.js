@@ -23,9 +23,10 @@ import QueueApp from './queueApp'
 import Maze from './maze'
 import Btn from './btn'
 import Reminders from './reminders'
+import Snackbar from './snackbar'
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Debugger />, document.getElementById('root'));
+ReactDOM.render(<Snackbar />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

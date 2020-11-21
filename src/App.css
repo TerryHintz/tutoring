@@ -176,3 +176,26 @@
   padding: 10px;
   display: none;
 }
+
+.box1{
+  height: 200px;
+  width: 200px;
+  background-color: cornflowerblue;
+  z-index: 1;
+}
+
+.box2{
+  height: 200px;
+  width: 200px;
+  background-color: firebrick;
+  position: absolute;
+  top: 250px;
+  z-index: 3;
+}
+
+.box3{
+  height: 200px;
+  width: 200px;
+  background-color: black;
+  z-index: 999;
+}

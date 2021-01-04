@@ -10,8 +10,67 @@ class Debugger extends Component {
   }
 
   componentDidMount() {
-    this.boring(['r', 'd', 'r'], [2, 10, 4]);
-    // 12 7 5 2 3
+    this.clock(180)
+  }
+
+  clock = (min) => {
+    let count = 0;
+    let minutes = [1,2,0,0];
+    while(min > 0){
+      const copy = minutes.slice();
+      if(this.isArithmetic(copy)){
+        count++;
+      }
+      if(minutes[2] === 5 && minutes[3] === 9){
+        minutes[2] = 0;
+        minutes[3] = 0;
+        if(minutes[0] === 1 && minutes[1] === 2){
+          minutes[0] = 0;
+          minutes[1] = 1;
+        } else if(minutes[0] === 0 && minutes[1] === 9){
+          minutes[0] = 1;
+          minutes[1] = 0;
+        } else {
+          minutes[1]++;
+        }
+      } else if(minutes[3] === 9) {
+        minutes[3] = 0;
+        minutes[2]++;
+      } else {
+        minutes[3]++;
+      }
+      min--;
+    }
+    console.log(count);
+  }
+
+  isArithmetic = (arr) => {
+    if(arr[0] === 0){
+      arr.shift();
+    }
+    if(arr.length < 2){
+      console.error('Sequence is less than 2 numbers long');
+      return true;
+    }
+    let diff = arr[1]-arr[0];
+    for(let i=1; i<arr.length-1; i++){
+      if(arr[i+1]-arr[i] != diff){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  electric = (x1, y1, x2, y2, charge) => {
+    const needed = Math.abs(x1 - x2) + Math.abs(y1 - y2);
+    if(charge >= needed){
+      const leftover = charge - needed;
+      if(leftover%2 == 0){
+        console.log('Y')
+        return
+      }
+    }
+    console.log('N')
   }
 
   boring = (arr1, arr2) => {

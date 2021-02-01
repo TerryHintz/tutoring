@@ -10,7 +10,66 @@ class Debugger extends Component {
   }
 
   componentDidMount() {
-    this.clock(180)
+    let rectangles = [[5,8],[3,9],[5,12],[16,5]];
+    this.maxLength(rectangles)
+  }
+
+  maxLength=(rectangles)=>{
+    let sideLength=[];
+    let largest=0;
+    let count=0;
+    for(let i=0;i<rectangles.length;i++){
+      if(rectangles[i][0]<rectangles[i][1]){
+        sideLength.push(rectangles[i][0])
+      }
+      else{
+        sideLength.push(rectangles[i][1])
+      }
+    }
+    for(let i=0;i<sideLength.length;i++){
+      if(sideLength[i]>largest){
+        largest=sideLength[i]
+        count=0
+      }
+      else if(sideLength[i]==largest){
+        count++
+      }
+    }
+    console.log(count)
+  }
+
+  countConsistentStrings = (allowed, words) => {
+    let dict = {};
+    let res = words.length;
+    for(let i=0; i<allowed.length; i++){
+        dict[allowed[i]] = true;
+    }
+    for(let i=0; i<words.length; i++){
+        for(let j=0; j<words[i].length; j++){
+            const letter = words[i][j]
+            if(!dict[letter]){
+                res--;
+                break;
+            }
+        }
+    }
+    return res;
+  }
+
+  vowelSplit = (s) => {
+    let i=0;
+    let count = 0;
+    for(i=0; i<s.length/2; i++){
+        if(s[i] === 'a' || s[i] === 'e' || s[i] === 'i' || s[i] === 'o' || s[i] === 'u'){
+            count++;
+        }
+    }
+    for(i; i<s.length; i++){
+        if(s[i] === 'a' || s[i] === 'e' || s[i] === 'i' || s[i] === 'o' || s[i] === 'u'){
+            count--;
+        }
+    }
+    return count === 0;
   }
 
   clock = (min) => {
